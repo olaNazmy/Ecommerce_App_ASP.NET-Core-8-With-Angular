@@ -1,0 +1,6 @@
+﻿1-here we used Entity Type configuration it more powerful and support many configurations more than data annotation, 
+2-added DBContext, 
+3-Done Migrations 
+4-Repositories Implemented 
+5-used unit of work other than repository pattern
+6-InfrastructureRegisteration used to register Service other than in program.cs in api, this way more enhanced and for general configuration
