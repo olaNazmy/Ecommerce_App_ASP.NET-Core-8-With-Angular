@@ -24,7 +24,7 @@ namespace Ecom.infrastructure.Repositories
             await context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(T id)
+        public async Task DeleteAsync(int id)
         {
             var entity = await context.Set<T>().FindAsync(id);
             context.Set<T>().Remove(entity);
@@ -33,11 +33,11 @@ namespace Ecom.infrastructure.Repositories
 
         public IEnumerable<T> GetAll() => context.Set<T>().AsNoTracking().ToList();
 
-        public async Task<IReadOnlyList<T>> GetAllAsync() => await context.Set<T>().AsNoTracking().ToListAsync();
+        public async Task<List<T>> GetAllAsync() => await context.Set<T>().AsNoTracking().ToListAsync();
 
-        public async Task<T> GetAsync(T id) => await context.Set<T>().FindAsync(id);
+        public async Task<T> GetAsync(int id) => await context.Set<T>().FindAsync(id);
 
-        public async Task UpdateAsync(T id, T entity)
+        public async Task UpdateAsync(int id, T entity)
         {
             var foundEntity = await context.Set<T>().FindAsync(id);
             context.Update(foundEntity);

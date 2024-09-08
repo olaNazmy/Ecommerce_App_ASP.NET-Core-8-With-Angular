@@ -9,12 +9,12 @@ namespace Ecom.core.Interfaces
     public interface IGenericRepository<T> where T : class
     {
         //CRUD operations
-        Task<IReadOnlyList<T>> GetAllAsync();
+        Task<List<T>> GetAllAsync();
         IEnumerable<T> GetAll(); 
-        Task<T>  GetAsync(T id);
+        Task<T>  GetAsync(int id);
         Task AddAsync(T entity);
-        Task UpdateAsync(T id,T entity);
-        Task DeleteAsync(T id);
+        Task UpdateAsync(int id,T entity);
+        Task DeleteAsync(int id);
 
 
 
